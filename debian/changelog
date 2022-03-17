@@ -1,0 +1,131 @@
+python-systemd (234-3ubuntu2) jammy; urgency=medium
+
+  * No-change rebuild with Python 3.10 only
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 17 Mar 2022 20:07:36 +0000
+
+python-systemd (234-3ubuntu1) jammy; urgency=medium
+
+  * Fold in commit c71bbac3 for additional PY_SSIZE_T_CLEAN fixes.
+    https://docs.python.org/3.10/whatsnew/3.10.html#id2 (LP: #1963582)
+
+ -- Dan Bungert <daniel.bungert@canonical.com>  Thu, 03 Mar 2022 16:40:15 -0700
+
+python-systemd (234-3build6) jammy; urgency=medium
+
+  * No-change rebuild to add python3.10.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 16 Oct 2021 06:59:20 +0000
+
+python-systemd (234-3build5) impish; urgency=medium
+
+  * No-change rebuild to build packages with zstd compression.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 07 Oct 2021 12:23:18 +0200
+
+python-systemd (234-3build4) hirsute; urgency=medium
+
+  * No-change rebuild to drop python3.8 extensions.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 07 Dec 2020 18:43:40 +0100
+
+python-systemd (234-3build3) hirsute; urgency=medium
+
+  * No-change rebuild to build with python3.9 as supported.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 24 Oct 2020 10:55:21 +0200
+
+python-systemd (234-3build2) focal; urgency=medium
+
+  * No-change rebuild to drop python3.7.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 18 Feb 2020 10:24:18 +0100
+
+python-systemd (234-3build1) focal; urgency=medium
+
+  * No-change rebuild to build with python3.8.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 18 Oct 2019 18:11:48 +0000
+
+python-systemd (234-3) unstable; urgency=medium
+
+  * d/control: Drop obsolete X-Python3-Version.
+    3.1 is older than oldstable even, so drop the field entirely. Fixes
+    `ancient-python-version-field` lintian warning.
+  * Bump Standards-Version to 4.4.0. No changes necessary.
+  * Drop Python 2 support.
+    All python-systemd reverse dependencies got dropped. (Closes: #938207)
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 12 Sep 2019 19:18:20 +0000
+
+python-systemd (234-2) unstable; urgency=medium
+
+  [ Michael Biebl ]
+  * Update Vcs-* to point to https://salsa.debian.org
+  * Set Rules-Requires-Root to no
+
+  [ Martin Pitt ]
+  * debian/copyright: Use https URL for Format:
+  * debian/copyright: Move global wildcard section to the top.
+    Fixes lintian warning
+    global-files-wildcard-not-first-paragraph-in-dep5-copyright.
+  * Bump Standards-Version to 4.1.3
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 26 Mar 2018 00:00:00 +0200
+
+python-systemd (234-1) unstable; urgency=medium
+
+  * New upstream version 234
+  * Bump debhelper compat level to 10
+  * Update Vcs-* following the latest recommendation
+  * Bump Standards-Version to 4.0.0
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 18 Jul 2017 23:25:48 +0200
+
+python-systemd (233-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 17 Oct 2016 19:17:47 +0200
+
+python-systemd (232-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Stop removing systemd/id128-constants.h on clean. This file is now shipped
+    in the dist tarball/repository.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 22 Sep 2016 14:29:34 +0200
+
+python-systemd (231-2) unstable; urgency=medium
+
+  [ Benjamin Drung ]
+  * debian/control: Run wrap-and-sort -a.
+  * Add python-systemd (Python 2 version) package. (Closes: #807496)
+
+  [ Martin Pitt ]
+  * Add autopkgtest for Python 2 package.
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 14 Dec 2015 08:07:44 +0100
+
+python-systemd (231-1) unstable; urgency=medium
+
+  [ Martin Pitt ]
+  * Add autopkgtest (copied from systemd source).
+
+  [ Michael Biebl ]
+  * Add debian/gbp.conf for git-buildpackage.
+  * New upstream release.
+  * Simplify clean up of systemd/id128-constants.h. The file is also created
+    automatically now, so we don't have to override dh_auto_build anymore for
+    this.
+  * Add Build-Depends on pkg-config as per setup.py.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 29 Oct 2015 01:54:51 +0100
+
+python-systemd (230-1) unstable; urgency=medium
+
+  * Initial release after the split from src:systemd. See
+    http://lists.freedesktop.org/archives/systemd-devel/2015-July/033443.html
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 07 Jul 2015 18:19:12 +0200
